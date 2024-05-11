@@ -1,0 +1,15 @@
+<div class="form__control">
+  <label class="form__label">{{ label }}</label>
+  <input
+    class="form__input"
+    type="text"
+    (input)="inputValueChange($event)"
+    (blur)="inputTouched()"
+    [value]="value"
+    appErrMessage
+    (emitErrorMessage)="addErrorMessage($event)"
+  />
+  <ng-container *ngIf="errorMessage">
+    <p class="form__error">{{ errorMessage }}</p>
+  </ng-container>
+</div>

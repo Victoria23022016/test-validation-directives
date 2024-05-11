@@ -1,0 +1,10 @@
+<div class="form__control">
+  <label class="form__label">{{ label }}</label>
+  <input
+    class="form__input"
+    type="date"
+    (input)="inputValueChange($event)"
+    (blur)="inputTouched()"
+    [value]="value"
+  />
+</div>

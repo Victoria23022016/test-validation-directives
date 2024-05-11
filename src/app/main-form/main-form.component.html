@@ -1,0 +1,23 @@
+<div class="container container__form">
+  <h1>Form</h1>
+  <form [formGroup]="form" class="form">
+    <app-basic-control
+      formControlName="primary"
+      label="Primary"
+    ></app-basic-control>
+
+    <app-select-control
+      formControlName="secondary"
+      label="Secondary"
+      [list]="list"
+    ></app-select-control>
+
+    <app-date-control
+      formControlName="tertiary"
+      label="Tertiary"
+    ></app-date-control>
+    <button class="form__button" type="submit" (click)="submit()">
+      Submit
+    </button>
+  </form>
+</div>

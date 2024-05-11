@@ -1,0 +1,14 @@
+<div class="form__control">
+  <label class="form__label">{{ label }}</label>
+  <select
+    class="form__input"
+    (input)="inputValueChange($event)"
+    (blur)="inputTouched()"
+    [value]="value"
+  >
+    <option disabled></option>
+    <ng-container *ngFor="let option of list">
+      <option>{{ option }}</option>
+    </ng-container>
+  </select>
+</div>

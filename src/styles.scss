@@ -1,1 +1,53 @@
-/* You can add global styles to this file, and also import other style files */
+.container {
+  margin: 0 auto;
+
+  &__form {
+    padding-top: 30px;
+    padding-left: 30px;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  &__control {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  &__label {
+    font-size: large;
+    font-weight: bold;
+  }
+
+  &__input {
+    width: 150px;
+    height: 30px;
+    border-radius: 6px;
+    border: 2px solid grey;
+  }
+
+  &__radio-wrapper {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__radio {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__button {
+    width: 100px;
+    height: 20px;
+  }
+
+  &__error {
+    color: red;
+  }
+}
