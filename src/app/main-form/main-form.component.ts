@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DateValidator } from '../validators/date-validator';
+import { SelectValidator } from '../validators/select-validator';
 
 @Component({
   selector: 'app-main-form',
@@ -18,14 +20,18 @@ export class MainFormComponent {
         '',
         [
           Validators.required,
-          // Validators.minLength(3),
-          // Validators.maxLength(6),
-          Validators.min(2),
-          Validators.max(10),
+          Validators.minLength(3),
+          Validators.maxLength(6),
+          Validators.min(111),
+          Validators.max(1000),
         ],
       ],
-      secondary: [''],
-      tertiary: [''],
+      secondary: ['', [Validators.required, SelectValidator.optionC()]],
+      tertiary: [
+        '',
+        [DateValidator.maxDate(), DateValidator.minDate(), Validators.required],
+      ],
+      quaternary: ['', [Validators.required, SelectValidator.optionC()]],
     });
   }
 

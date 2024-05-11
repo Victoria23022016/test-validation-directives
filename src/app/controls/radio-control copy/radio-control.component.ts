@@ -1,20 +1,20 @@
 import { Component, forwardRef, Input } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-  selector: 'app-date-control',
-  templateUrl: './date-control.component.html',
+  selector: 'app-radio-control',
+  templateUrl: './radio-control.component.html',
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => DateControlComponent),
+      useExisting: forwardRef(() => RadioControlComponent),
       multi: true,
     },
   ],
 })
-export class DateControlComponent implements ControlValueAccessor {
+export class RadioControlComponent {
   @Input() label: string;
-  value: string;
+  @Input() list!: string[];
   errorMessage: string;
 
   addErrorMessage(message: string): void {
@@ -34,9 +34,7 @@ export class DateControlComponent implements ControlValueAccessor {
     this.onTouched();
   }
 
-  writeValue(value: string): void {
-    this.value = value;
-  }
+  writeValue(value: string): void {}
 
   registerOnChange(fn: any): void {
     this.onChange = fn;

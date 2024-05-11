@@ -16,6 +16,11 @@ export class SelectControlComponent {
   @Input() label: string;
   @Input() list!: string[];
   value: string;
+  errorMessage: string;
+
+  addErrorMessage(message: string): void {
+    this.errorMessage = message;
+  }
 
   private onChange(value: string): void {}
   private onTouched(): void {}

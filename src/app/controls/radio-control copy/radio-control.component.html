@@ -1,0 +1,22 @@
+<div class="form__control">
+  <label class="form__label">{{ label }}</label>
+  <div class="form__radio-wrapper">
+    <div *ngFor="let option of list" class="form__radio">
+      <p class="form__label">{{ option }}</p>
+      <input
+        type="radio"
+        name="radioOption"
+        value="{{ option }}"
+        class="form__input"
+        (input)="inputValueChange($event)"
+        (blur)="inputTouched()"
+        appSelectErrMessage
+        (emitErrorMessage)="addErrorMessage($event)"
+      />
+    </div>
+  </div>
+
+  <ng-container *ngIf="errorMessage">
+    <p class="form__error">{{ errorMessage }}</p>
+  </ng-container>
+</div>

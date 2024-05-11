@@ -14,8 +14,8 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 })
 export class BasicControlComponent implements ControlValueAccessor {
   @Input() label: string;
-  errorMessage: string;
   value: string;
+  errorMessage: string;
 
   addErrorMessage(message: string): void {
     this.errorMessage = message;

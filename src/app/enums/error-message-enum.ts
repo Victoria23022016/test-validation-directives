@@ -1,5 +1,8 @@
 export enum CustomErrorMessagesEnum {
   required = 'Поле обязательно для заполнения',
+  maxDate = 'Дата не может быть позднее сегодня',
+  minDate = 'Дата не может быть ранее 1900 года',
+  optionC = 'Нельзя выбрать вариант C',
 }
 
 export enum LengthErrorMessagesEnum {

@@ -16,6 +16,13 @@
       formControlName="tertiary"
       label="Tertiary"
     ></app-date-control>
+
+    <app-radio-control
+      formControlName="quaternary"
+      label="Quaternary"
+      [list]="list"
+    ></app-radio-control>
+
     <button class="form__button" type="submit" (click)="submit()">
       Submit
     </button>

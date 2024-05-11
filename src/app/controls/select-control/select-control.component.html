@@ -5,10 +5,15 @@
     (input)="inputValueChange($event)"
     (blur)="inputTouched()"
     [value]="value"
+    appSelectErrMessage
+    (emitErrorMessage)="addErrorMessage($event)"
   >
     <option disabled></option>
     <ng-container *ngFor="let option of list">
       <option>{{ option }}</option>
     </ng-container>
   </select>
+  <ng-container *ngIf="errorMessage">
+    <p class="form__error">{{ errorMessage }}</p>
+  </ng-container>
 </div>
