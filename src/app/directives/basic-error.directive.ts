@@ -1,8 +1,8 @@
-//Директива применяется для формирования текстов ошибок для инпутов с типом text, number и date
+//Директива применяется для формирования текстов ошибок для инпутов с любым типом
 //чтобы ее применить, на инпут контрола необходимо добавить селектор директивы + реализовать метод для отлавливания
 //события emitErrorMessage
 
-import { Directive, EventEmitter, HostListener, Output } from '@angular/core';
+import { Directive, EventEmitter, Output } from '@angular/core';
 import { NgControl } from '@angular/forms';
 import {
   CustomErrorMessagesEnum,
@@ -20,13 +20,13 @@ export class ErrMessageDirective {
 
   //если необходимо, чтобы сообщение "Поле обязательно для заполнения" высвечивалось до ввода данных в поле
   ngOnInit(): void {
+    this.control.valueChanges?.subscribe(() => this.showErrors());
     if (this.control.hasError('required')) {
       this.createErrorMessage();
     }
   }
 
-  @HostListener('keyup') showErrors() {
-    //для селекта нужен change событие
+  showErrors(): void {
     if (this.control.errors) {
       switch (Object.keys(this.control.errors)[0]) {
         case 'minlength':
