@@ -1,6 +1,6 @@
 import { AbstractControl, ValidatorFn, ValidationErrors } from '@angular/forms';
 
-export const InvalidDateValidator = (
+export const createInvalidDateValidator = (
   minDateValue: string,
   minDateErrorMessage: (controlValue: string) => string,
   maxDateErrorMessage: (controlValue: string) => string
